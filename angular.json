@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/lribeiro2",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "lribeiro2:build"
+            "browserTarget": "lribeiro:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "lribeiro2:build:production"
+              "browserTarget": "lribeiro:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lribeiro2:build"
+            "browserTarget": "lribeiro:build"
           }
         },
         "test": {
@@ -114,15 +114,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "lribeiro2:serve"
+            "devServerTarget": "lribeiro:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "lribeiro2:serve:production"
+              "devServerTarget": "lribeiro:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "lribeiro2"
+    }
+  },
+  "defaultProject": "lribeiro",
+  "cli": {
+    "analytics": "6dbda6dd-ca3b-4ea4-a456-71c1a58b0dba"
+  }
 }
