@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'lribeiro2';
+  title = 'lribeiro';
+
+  scroll(e: any, id: string): void {
+    e.preventDefault();
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+  }
+
 }
