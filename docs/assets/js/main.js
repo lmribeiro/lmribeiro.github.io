@@ -8,12 +8,12 @@
       event.preventDefault();
       const $this = $(this);
 
-      if ($('body').hasClass('offcanvas')) {
+      if ($('body').hasClass('off')) {
         $this.removeClass('active');
-        $('body').removeClass('offcanvas');
+        $('body').removeClass('off');
       } else {
         $this.addClass('active');
-        $('body').addClass('offcanvas');
+        $('body').addClass('off');
       }
 
     });
@@ -25,16 +25,16 @@
     $(document).click(function (e) {
       const container = $("#aside, .js-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('body').hasClass('offcanvas')) {
-          $('body').removeClass('offcanvas');
+        if ($('body').hasClass('off')) {
+          $('body').removeClass('off');
           $('.js-nav-toggle').removeClass('active');
         }
       }
     });
 
     $(window).scroll(function () {
-      if ($('body').hasClass('offcanvas')) {
-        $('body').removeClass('offcanvas');
+      if ($('body').hasClass('off')) {
+        $('body').removeClass('off');
         $('.js-nav-toggle').removeClass('active');
       }
     });
