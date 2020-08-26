@@ -7,10 +7,12 @@ import {Component, HostListener} from '@angular/core';
 })
 export class AppComponent {
   class = 'on';
+  tClass = 'nav-toggle';
 
   @HostListener('window:scroll', ['$event'])
   checkScroll(): void {
     this.class = 'on';
+    this.tClass = 'nav-toggle';
     this.changeMenu();
   }
 
@@ -23,8 +25,10 @@ export class AppComponent {
     e.preventDefault();
     if (this.class === 'on') {
       this.class = 'of';
+      this.tClass = 'nav-toggle active';
     } else {
       this.class = 'on';
+      this.tClass = 'nav-toggle';
     }
     this.changeMenu();
   }
