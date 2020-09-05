@@ -6,7 +6,7 @@
 
     <div id="main">
 
-      <section class="about mt-5 mb-5" id="about">
+      <section class="section mt-5 mb-5" id="about">
         <div class="narrow-content">
           <div class="row">
             <div class="col-md-12">
@@ -34,7 +34,8 @@
                 <div class="text-center">
                   <br/>
                   <p><strong>Still not convinced?</strong></p>
-                  <p><a href="#" (click)="scroll($event, 'work')" class="btn btn-primary">Check out my recent work</a></p>
+                  <p><a href="#" (click)="scroll($event, 'work')" class="btn btn-primary">Check out my recent work</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -42,99 +43,15 @@
         </div>
       </section>
 
-      <section class="education" id="education">
-        <div class="narrow-content">
-          <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-md-pull-3">
-              <h2 class="heading">Education</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="timeline">
-                <article class="timeline-entry" *ngFor="let education of educations | sortBy:'asc':'position'">
-                  <div class="timeline-entry-inner">
-                    <div class="timeline-icon">
-                      <a href="{{ education.school_webpage }}" target="_blank" rel="noreferrer" aria-labelledby="{{ education.school }}">
-                        <img src="{{ education.school_image }}" alt="{{ education.school }}"/>
-                      </a>
-                    </div>
-                    <div class="timeline-label">
-
-                      <h2>{{ education.degree }}</h2>
-                      <div>
-                        <a href="{{ education.school_webpage }}" target="_blank" rel="noreferrer"
-                           aria-labelledby="{{ education.school }}">
-                          {{ education.school }}
-                        </a> - {{ education.field_of_study }}
-                      </div>
-                      <div>
-                        <small>{{ education.year_start }} - {{ education.year_end }}</small>
-                      </div>
-                      <p [innerHtml]="education.description"></p>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="timeline-entry begin">
-                  <div class="timeline-entry-inner">
-                    <div class="timeline-icon color-none">
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section class="section" id="education">
+        <app-timeline title="education" [items]="educations"></app-timeline>
       </section>
 
-      <section class="experience" id="experience">
-        <div class="narrow-content">
-          <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-md-pull-3">
-              <h2 class="heading">Experience</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="timeline">
-                <article class="timeline-entry" *ngFor="let experience of experiences">
-                  <div class="timeline-entry-inner">
-                    <div class="timeline-icon">
-                      <a href="{{ experience.company_webpage }}" target="_blank" rel="noreferrer" aria-labelledby="{{ experience.company }}">
-                        <img src="{{ experience.company_image }}" alt="{{ experience.company }}"/>
-                      </a>
-                    </div>
-                    <div class="timeline-label">
-
-                      <h2>{{ experience.job }}</h2>
-                      <div>
-                        <a href="{{ experience.company_webpage }}" target="_blank" rel="noreferrer"
-                           aria-labelledby="{{ experience.company }}">
-                          {{ experience.company }}
-                        </a> - {{ experience.company_location }}
-                      </div>
-                      <div>
-                        <small>{{ experience.date_start }} - {{ experience.ongoing ? 'Present' : experience.date_end }}</small>
-                      </div>
-                      <p [innerHtml]="experience.job_description"></p>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="timeline-entry begin">
-                  <div class="timeline-entry-inner">
-                    <div class="timeline-icon color-none">
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section class="section" id="experience">
+        <app-timeline title="experience" [items]="experiences"></app-timeline>
       </section>
 
-      <section class="work" id="work">
+      <section class="section" id="work">
         <div class="narrow-content">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 col-md-pull-3">

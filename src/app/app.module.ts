@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 
 import { NgpSortModule } from 'ngp-sort-pipe';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,68 @@
+<div class="narrow-content">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-md-pull-3">
+      <h2 class="heading">{{ title }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="timeline">
+        <article class="timeline-entry" *ngFor="let item of items">
+
+          <div *ngIf="title == 'education'" class="timeline-entry-inner">
+            <div class="timeline-icon">
+              <a href="{{ item.school_webpage }}" target="_blank" rel="noreferrer" aria-labelledby="{{ item.school }}">
+                <img src="{{ item.school_image }}" alt="{{ item.school }}"/>
+              </a>
+            </div>
+            <div class="timeline-label">
+
+              <h2>{{ item.degree }}</h2>
+              <div>
+                <a href="{{ item.school_webpage }}" target="_blank" rel="noreferrer"
+                   aria-labelledby="{{ item.school }}">
+                  {{ item.school }}
+                </a> - {{ item.field_of_study }}
+              </div>
+              <div>
+                <small>{{ item.year_start }} - {{ item.year_end }}</small>
+              </div>
+              <p [innerHtml]="item.description"></p>
+            </div>
+          </div>
+
+          <div *ngIf="title == 'experience'" class="timeline-entry-inner">
+            <div class="timeline-icon">
+              <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer"
+                 aria-labelledby="{{ item.company }}">
+                <img src="{{ item.company_image }}" alt="{{ item.company }}"/>
+              </a>
+            </div>
+            <div class="timeline-label">
+
+              <h2>{{ item.job }}</h2>
+              <div>
+                <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer"
+                   aria-labelledby="{{ item.company }}">
+                  {{ item.company }}
+                </a> - {{ item.company_location }}
+              </div>
+              <div>
+                <small>{{ item.date_start }}
+                  - {{ item.ongoing ? 'Present' : item.date_end }}</small>
+              </div>
+              <p [innerHtml]="item.job_description"></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-entry begin">
+          <div class="timeline-entry-inner">
+            <div class="timeline-icon color-none">
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
