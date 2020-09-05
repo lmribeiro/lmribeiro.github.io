@@ -443,30 +443,30 @@ body {
 }
 
 //TIMELINE
-.timeline-centered {
+.timeline {
   position: relative;
   margin-bottom: 30px;
 }
 
-.timeline-centered:before, .timeline-centered:after {
+.timeline:before, .timeline:after {
   content: " ";
   display: table;
 }
 
-.timeline-centered:after {
+.timeline:after {
   clear: both;
 }
 
-.timeline-centered:before, .timeline-centered:after {
+.timeline:before, .timeline:after {
   content: " ";
   display: table;
 }
 
-.timeline-centered:after {
+.timeline:after {
   clear: both;
 }
 
-.timeline-centered:before {
+.timeline:before {
   content: '';
   position: absolute;
   display: block;
@@ -477,21 +477,24 @@ body {
   margin-left: 29px;
 }
 
-.timeline-centered .timeline-entry {
+.timeline .timeline-entry {
   position: relative;
   margin-top: 5px;
   margin-left: 30px;
   margin-bottom: 25px;
   clear: both;
+  @media screen and (max-width: $screen-md) {
+    margin-left: -40px;
+  }
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner {
+.timeline .timeline-entry .timeline-entry-inner {
   position: relative;
   margin-left: -20px;
 }
 
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+.timeline .timeline-entry .timeline-entry-inner .timeline-icon {
   display: block;
   width: 40px;
   height: 40px;
@@ -513,10 +516,20 @@ body {
     height: 20px;
     margin-left: 10px;
     @include border-radius(50%);
+    @media screen and (max-width: $screen-md) {
+      float: none;
+      margin-left: 20%;
+    }
+  }
+
+  @media screen and (max-width: $screen-md) {
+    float: none;
+    margin-left: 18%;
+    margin-bottom: 3%;
   }
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
+.timeline .timeline-entry .timeline-entry-inner .timeline-label {
   position: relative;
   background: $color-gray;
   padding: 0.1em 1.5em 0.2em;
@@ -526,7 +539,7 @@ body {
   background-clip: padding-box;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
+.timeline .timeline-entry .timeline-entry-inner .timeline-label:after {
   content: '';
   display: block;
   position: absolute;
@@ -538,24 +551,27 @@ body {
   left: 0;
   top: 10px;
   margin-left: -9px;
+  @media screen and (max-width: $screen-md) {
+    margin-left: 0;
+  }
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p + p {
+.timeline .timeline-entry .timeline-entry-inner .timeline-label p + p {
   margin-top: 15px;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
+.timeline .timeline-entry .timeline-entry-inner .timeline-label h2 {
   font-size: 20px;
   font-family: $font-primary;
   font-weight: 500;
   margin: 0.5em 0;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 a {
+.timeline .timeline-entry .timeline-entry-inner .timeline-label h2 a {
   color: $color-black;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 span {
+.timeline .timeline-entry .timeline-entry-inner .timeline-label h2 span {
   -webkit-opacity: .4;
   -moz-opacity: .4;
   opacity: .4;
