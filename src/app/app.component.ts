@@ -1,5 +1,4 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import { NgpSortModule } from 'ngp-sort-pipe';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -55,7 +54,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Initialize Cloud Firestore through Firebase
-    firebase.initializeApp( this.firebaseConfig);
+    firebase.initializeApp(this.firebaseConfig);
     this.db = firebase.firestore();
 
     this.db.collection('education').get().then((data) => {
