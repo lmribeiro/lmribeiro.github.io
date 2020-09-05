@@ -1,10 +1,10 @@
 <aside id="aside" role="complementary" class="js-fullheight">
     <div class="text-center">
-      <div class="avatar-img" style="background-image: url({{ user.avatar }});"></div>
+      <div class="avatar-img" style="background-image: url({{ my.avatar }});"></div>
       <h1 id="logo" class="text-center">
-        <a href="#" (click)="scroll($event, 'page')">{{ user.name }}</a>
+        <a href="#" (click)="scroll($event, 'page')">{{ my.name }}</a>
       </h1>
-      <span class="position">{{ user.position }}<br/><small>{{ user.location }}</small> </span>
+      <span class="position">{{ my.position }}<br/><small>{{ my.location }}</small> </span>
     </div>
 
     <nav id="main-menu" role="navigation" class="navbar">

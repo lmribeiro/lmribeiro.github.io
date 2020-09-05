@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -6,16 +6,10 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./menu.component.sass']
 })
 export class MenuComponent implements OnInit {
-  public currentActive = 0;
-  public aboutOffset = null;
-  public educationOffset = null;
-  public experienceOffset = null;
-  public workOffset = null;
-
   class = 'about';
   date = new Date().getFullYear();
 
-  user = {
+  my = {
     name: 'Luis Ribeiro',
     position: 'Software Developer',
     location: 'from Portugal',
@@ -42,33 +36,34 @@ export class MenuComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.aboutOffset = document.getElementById('about').offsetTop;
-    this.educationOffset = document.getElementById('education').offsetTop;
-    this.experienceOffset = document.getElementById('experience').offsetTop;
-    this.workOffset = document.getElementById('work').offsetTop;
   }
 
-@HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll', ['$event'])
   checkOffsetTop(): void {
+    const aboutOffset = document.getElementById('about').offsetTop;
+    const educationOffset = document.getElementById('education').offsetTop;
+    const experienceOffset = document.getElementById('experience').offsetTop;
+    const workOffset = document.getElementById('work').offsetTop;
     const pageYOffset = window.pageYOffset;
-    if (pageYOffset >= this.aboutOffset && pageYOffset < this.educationOffset) {
+
+    if (pageYOffset >= aboutOffset && pageYOffset < educationOffset) {
       this.class = 'about';
-    } else if (pageYOffset >= this.educationOffset && pageYOffset < this.experienceOffset) {
+    } else if (pageYOffset >= educationOffset && pageYOffset < experienceOffset) {
       this.class = 'education';
-    } else if (pageYOffset >= this.experienceOffset && pageYOffset < this.workOffset) {
+    } else if (pageYOffset >= experienceOffset && pageYOffset < workOffset) {
       this.class = 'experience';
-    } else if (pageYOffset >= this.workOffset) {
+    } else if (pageYOffset >= workOffset) {
       this.class = 'work';
     } else {
       this.class = 'about';
     }
   }
 
-  constructor() { }
+  constructor() {
+  }
 
   scroll(e: any, id: string): void {
     e.preventDefault();
-
     this.class = id;
     document.getElementById(id).scrollIntoView({behavior: 'smooth'});
   }
