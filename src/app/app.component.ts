@@ -12,9 +12,7 @@ export class AppComponent implements OnInit {
   class = 'on';
   tClass = 'nav-toggle';
   db = null;
-  firebaseConfig = {
-
-  };
+  firebaseConfig = {};
   educations = [];
   experiences = [];
 
@@ -62,7 +60,6 @@ export class AppComponent implements OnInit {
         this.experiences.push(doc.data());
       });
     });
-    console.log(this.educations);
   }
 
 

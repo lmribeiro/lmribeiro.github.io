@@ -9,8 +9,8 @@ export class MenuComponent implements OnInit {
   public currentActive = 0;
   public aboutOffset = null;
   public educationOffset = null;
-  public expirienceOffset = null;
-  public worktOffset = null;
+  public experienceOffset = null;
+  public workOffset = null;
 
   class = 'about';
   date = new Date().getFullYear();
@@ -44,8 +44,8 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.aboutOffset = document.getElementById('about').offsetTop;
     this.educationOffset = document.getElementById('education').offsetTop;
-    this.expirienceOffset = document.getElementById('experience').offsetTop;
-    this.worktOffset = document.getElementById('work').offsetTop;
+    this.experienceOffset = document.getElementById('experience').offsetTop;
+    this.workOffset = document.getElementById('work').offsetTop;
   }
 
 @HostListener('window:scroll', ['$event'])
@@ -53,11 +53,11 @@ export class MenuComponent implements OnInit {
     const pageYOffset = window.pageYOffset;
     if (pageYOffset >= this.aboutOffset && pageYOffset < this.educationOffset) {
       this.class = 'about';
-    } else if (pageYOffset >= this.educationOffset && pageYOffset < this.expirienceOffset) {
+    } else if (pageYOffset >= this.educationOffset && pageYOffset < this.experienceOffset) {
       this.class = 'education';
-    } else if (pageYOffset >= this.expirienceOffset && pageYOffset < this.worktOffset) {
+    } else if (pageYOffset >= this.experienceOffset && pageYOffset < this.workOffset) {
       this.class = 'experience';
-    } else if (pageYOffset >= this.worktOffset) {
+    } else if (pageYOffset >= this.workOffset) {
       this.class = 'work';
     } else {
       this.class = 'about';

@@ -6,17 +6,17 @@
 
     <div id="main">
 
-      <section class="about mt-5 mb-5" id="about">
+      <section class="mt-5 mb-5" id="about">
         <div class="narrow-content">
           <div class="row">
             <div class="col-md-12">
               <div class="row row-bottom-padded-sm">
                 <div class="col-md-12">
                   <div class="about-desc">
-                    <h1>Hi!</h1>
+                    <h1>Hi there 👋</h1>
                   </div>
                   <p><strong>I'm Luís</strong>, a Software Developer with focus on the web platform and cross-platform
-                    mobile app development. I work mostly with PHP Ionic and Angular.</p>
+                    mobile app development. <br/>I work mostly with PHP Ionic and Angular.</p>
                   <p>I'm currently working in E-goi's Web Team making landing pages great again.</p>
                 </div>
               </div>
@@ -24,7 +24,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="hire">
-                    <h2>Have a project? <br>Lets talk and see how I can help!</h2>
+                    <h2>Have a project? <br/>Lets talk and see how I can help!</h2>
                     <a href="mailto:luis.mribeiro@sapo.pt" class="btn-hire btn btn-outline">Lets Go</a>
                   </div>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="text-center">
                   <br/>
                   <p><strong>Still not convinced?</strong></p>
-                  <p><a href="#" (click)="scroll($event, 'work')" class="btn btn-primary">See my recent work</a></p>
+                  <p><a href="#" (click)="scroll($event, 'work')" class="btn btn-primary">Check out my recent work</a></p>
                 </div>
               </div>
             </div>
@@ -42,17 +42,16 @@
         </div>
       </section>
 
-      <section class="education" id="education">
+      <section id="education">
         <div class="narrow-content">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 col-md-pull-3">
-              <span class="heading-meta">Education</span>
               <h2 class="heading">Education</h2>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="timeline-centered">
+              <div class="timeline">
                 <article class="timeline-entry" *ngFor="let education of educations | sortBy:'asc':'position'">
                   <div class="timeline-entry-inner">
                     <div class="timeline-icon">
@@ -72,7 +71,7 @@
                       <div>
                         <small>{{ education.year_start }} - {{ education.year_end }}</small>
                       </div>
-                      <p>{{ education.description }}</p>
+                      <p [innerHtml]="education.description"></p>
                     </div>
                   </div>
                 </article>
@@ -89,17 +88,16 @@
         </div>
       </section>
 
-      <section class="experience" id="experience">
+      <section id="experience">
         <div class="narrow-content">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 col-md-pull-3">
-              <span class="heading-meta">Experience</span>
-              <h2 class="heading">Work Experience</h2>
+              <h2 class="heading">Experience</h2>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="timeline-centered">
+              <div class="timeline">
                 <article class="timeline-entry" *ngFor="let experience of experiences">
                   <div class="timeline-entry-inner">
                     <div class="timeline-icon">
@@ -119,7 +117,7 @@
                       <div>
                         <small>{{ experience.date_start }} - {{ experience.ongoing ? 'Present' : experience.date_end }}</small>
                       </div>
-                      <p>{{ experience.job_description }}</p>
+                      <p [innerHtml]="experience.job_description"></p>
                     </div>
                   </div>
                 </article>
@@ -136,20 +134,19 @@
         </div>
       </section>
 
-      <section class="work" data-section="work" id="work">
+      <section class="work" id="work">
         <div class="narrow-content">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 col-md-pull-3">
-              <span class="heading-meta">My Work</span>
               <h2 class="heading">Recent Work</h2>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="project" style="background-image: url(../assets/images/curtos-pt.jpg);">
+              <div class="project">
                 <div class="desc">
                   <div class="con">
-                    <h3><a href=".html">Work</a></h3>
+                    <h3><a href="#">Work</a></h3>
                     <span>Website</span>
                     <p class="icon">
                       <span><a href="#"><i class="icon-eye"></i> 100</a></span>
