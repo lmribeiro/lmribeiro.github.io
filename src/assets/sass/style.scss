@@ -453,15 +453,6 @@ body {
   clear: both;
 }
 
-.timeline:before, .timeline:after {
-  content: " ";
-  display: table;
-}
-
-.timeline:after {
-  clear: both;
-}
-
 .timeline:before {
   content: '';
   position: absolute;
@@ -471,6 +462,9 @@ body {
   top: 20px;
   bottom: 20px;
   margin-left: 29px;
+  @media screen and(max-width: $screen-sm) {
+    background:transparent
+  }
 }
 
 .timeline .timeline-entry {
@@ -519,15 +513,14 @@ body {
     margin-left: 10px;
     @include border-radius(50%);
     @media screen and (max-width: $screen-md) {
-      float: none;
-      margin-left: 20%;
+      display: none;
     }
   }
 
   @media screen and (max-width: $screen-md) {
     float: none;
-    margin-left: 18%;
-    margin-bottom: 3%;
+    margin-left: 9.5%;
+    margin-bottom: 2%;
   }
 }
 
@@ -957,13 +950,6 @@ body {
 
 .col-padding {
   padding: 10px !important;
-}
-
-
-.animate-box {
-  .js & {
-    opacity: 0;
-  }
 }
 
 .footer a {
