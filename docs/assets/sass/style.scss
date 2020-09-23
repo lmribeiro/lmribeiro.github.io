@@ -531,7 +531,7 @@ body {
   }
 }
 
-.timeline .timeline-entry .timeline-entry-inner .timeline-label {
+.timeline .timeline-entry .timeline-entry-inner .timeline-text {
   position: relative;
   background: $color-gray;
   padding: 0.1em 1.5em 0.2em;
@@ -541,7 +541,7 @@ body {
   background-clip: padding-box;
 }
 
-.timeline .timeline-entry .timeline-entry-inner .timeline-label:after {
+.timeline .timeline-entry .timeline-entry-inner .timeline-text:after {
   content: '';
   display: block;
   position: absolute;
@@ -558,22 +558,22 @@ body {
   }
 }
 
-.timeline .timeline-entry .timeline-entry-inner .timeline-label p + p {
+.timeline .timeline-entry .timeline-entry-inner .timeline-text p + p {
   margin-top: 15px;
 }
 
-.timeline .timeline-entry .timeline-entry-inner .timeline-label h2 {
+.timeline .timeline-entry .timeline-entry-inner .timeline-text h2 {
   font-size: 20px;
   font-family: $font-primary;
   font-weight: 500;
   margin: 0.5em 0;
 }
 
-.timeline .timeline-entry .timeline-entry-inner .timeline-label h2 a {
+.timeline .timeline-entry .timeline-entry-inner .timeline-text h2 a {
   color: $color-black;
 }
 
-.timeline .timeline-entry .timeline-entry-inner .timeline-label h2 span {
+.timeline .timeline-entry .timeline-entry-inner .timeline-text h2 span {
   -webkit-opacity: .4;
   -moz-opacity: .4;
   opacity: .4;
