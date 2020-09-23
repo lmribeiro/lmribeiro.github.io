@@ -6,6 +6,7 @@ $brand-secondary: #f9bf3f !default;
 $color-white: #fff;
 $color-black: #111;
 $color-gray: #e9e9e9;
+$color-light-gray: #f4f5f7;
 
 // Mixin
 @mixin translateX($translatex) {
@@ -75,7 +76,7 @@ body {
 }
 
 a {
-  color: $brand-primary;
+  color: darken($brand-primary, 30%);
   @include transition(.5s);
 
   &:hover, &:active, &:focus {
@@ -224,7 +225,7 @@ figure {
             bottom: 7px;
             left: 0;
             right: 0;
-            background-color: $brand-primary;
+            background-color: darken($brand-primary, 30%);
             visibility: hidden;
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
@@ -254,7 +255,7 @@ figure {
         }
 
         a.active {
-          color: $brand-primary;
+          color: darken($brand-primary, 30%);
 
           &:after {
             visibility: visible;
@@ -453,15 +454,6 @@ body {
   clear: both;
 }
 
-.timeline:before, .timeline:after {
-  content: " ";
-  display: table;
-}
-
-.timeline:after {
-  clear: both;
-}
-
 .timeline:before {
   content: '';
   position: absolute;
@@ -471,6 +463,9 @@ body {
   top: 20px;
   bottom: 20px;
   margin-left: 29px;
+  @media screen and(max-width: $screen-sm) {
+    background:transparent
+  }
 }
 
 .timeline .timeline-entry {
@@ -519,23 +514,21 @@ body {
     margin-left: 10px;
     @include border-radius(50%);
     @media screen and (max-width: $screen-md) {
-      float: none;
-      margin-left: 20%;
+      display: none;
     }
   }
 
   @media screen and (max-width: $screen-md) {
-    float: none;
-    margin-left: 18%;
-    margin-bottom: 3%;
+    display: none;
   }
 }
 
 .timeline .timeline-entry .timeline-entry-inner .timeline-text {
   position: relative;
-  background: $color-gray;
+  background: $color-light-gray;
   padding: 0.1em 1.5em 0.2em;
   margin-left: 60px;
+  text-align: justify;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
@@ -549,7 +542,7 @@ body {
   height: 0;
   border-style: solid;
   border-width: 9px 9px 9px 0;
-  border-color: transparent $color-gray transparent transparent;
+  border-color: transparent $color-light-gray transparent transparent;
   left: 0;
   top: 10px;
   margin-left: -9px;
@@ -592,6 +585,10 @@ body {
   width: 100%;
   display: block;
   margin-bottom: 30px;
+
+  img {
+    width: 100%;
+  }
 
   .desc {
     position: absolute;
@@ -774,12 +771,13 @@ body {
 
 .btn-primary {
   background: $brand-primary;
-  color: $color-white;
+  color: $color-black;
   border: 2px solid $brand-primary;
 
   &:hover, &:focus, &:active {
-    background: darken($brand-primary, 10%) !important;
-    border-color: darken($brand-primary, 10%) !important;
+    background: darken($brand-primary, 20%) !important;
+    border-color: darken($brand-primary, 20%) !important;
+    color: $color-white;
   }
 
   &.btn-outline {
@@ -959,21 +957,19 @@ body {
   padding: 10px !important;
 }
 
-
-.animate-box {
-  .js & {
-    opacity: 0;
-  }
-}
-
-.footer a {
-  .icon-img {
-    fill: $text-muted;
-  }
-
-  :hover {
+.footer {
+  a {
     .icon-img {
-      fill: $brand-primary;
+      fill: $text-muted;
     }
+
+    :hover {
+      .icon-img {
+        fill: $brand-primary;
+      }
+    }
+  }
+  small {
+    color: $color-black;
   }
 }
