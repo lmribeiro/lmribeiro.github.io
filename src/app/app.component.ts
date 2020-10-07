@@ -57,13 +57,13 @@ export class AppComponent implements OnInit {
     firebase.initializeApp(this.firebaseConfig);
     this.db = firebase.firestore();
 
-    this.db.collection('education').get().then((data) => {
+    this.db.collection('education').orderBy('position').get().then((data) => {
       data.forEach((doc) => {
         this.educations.push(doc.data());
       });
     });
 
-    this.db.collection('experience').get().then((data) => {
+    this.db.collection('experience').orderBy('position').get().then((data) => {
       data.forEach((doc) => {
         this.experiences.push(doc.data());
       });

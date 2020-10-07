@@ -11,7 +11,7 @@
 
           <div *ngIf="title == 'education'" class="timeline-entry-inner">
             <div class="timeline-icon">
-              <a href="{{ item.school_webpage }}" target="_blank" rel="noreferrer" aria-labelledby="{{ item.school }}">
+              <a href="{{ item.school_webpage }}" target="_blank" rel="noreferrer">
                 <img src="{{ item.school_image }}" alt="{{ item.school }}"/>
               </a>
             </div>
@@ -19,8 +19,7 @@
 
               <h2>{{ item.degree }}</h2>
               <div>
-                <a href="{{ item.school_webpage }}" target="_blank" rel="noreferrer"
-                   aria-labelledby="{{ item.school }}">
+                <a href="{{ item.school_webpage }}" target="_blank" rel="noreferrer">
                   {{ item.school }}
                 </a> - {{ item.field_of_study }}
               </div>
@@ -33,8 +32,7 @@
 
           <div *ngIf="title == 'experience'" class="timeline-entry-inner">
             <div class="timeline-icon">
-              <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer"
-                 aria-labelledby="{{ item.company }}">
+              <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer">
                 <img src="{{ item.company_image }}" alt="{{ item.company }}"/>
               </a>
             </div>
@@ -42,8 +40,7 @@
 
               <h2>{{ item.job }}</h2>
               <div>
-                <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer"
-                   aria-labelledby="{{ item.company }}">
+                <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer">
                   {{ item.company }}
                 </a> - {{ item.company_location }}
               </div>
