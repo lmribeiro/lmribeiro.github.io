@@ -54,7 +54,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Initialize Cloud Firestore through Firebase
-    firebase.initializeApp(this.firebaseConfig);
+    if (firebase.apps.length === 0) {
+        firebase.initializeApp(this.firebaseConfig);
+    }
     this.db = firebase.firestore();
 
     this.db.collection('education').orderBy('position').get().then((data) => {
@@ -69,6 +71,4 @@ export class AppComponent implements OnInit {
       });
     });
   }
-
-
 }
