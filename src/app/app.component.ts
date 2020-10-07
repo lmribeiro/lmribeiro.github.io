@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   };
   educations = [];
   experiences = [];
+  projects = [];
 
   @HostListener('window:scroll', ['$event'])
   checkScroll(): void {
@@ -68,6 +69,12 @@ export class AppComponent implements OnInit {
     this.db.collection('experience').orderBy('position').get().then((data) => {
       data.forEach((doc) => {
         this.experiences.push(doc.data());
+      });
+    });
+
+    this.db.collection('project').orderBy('position').get().then((data) => {
+      data.forEach((doc) => {
+        this.projects.push(doc.data());
       });
     });
   }
