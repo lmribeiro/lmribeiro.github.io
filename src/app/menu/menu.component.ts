@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
       id: 'experience',
     },
     {
-      name: 'Recent Work',
+      name: 'Featured Work',
       id: 'work',
     }
   ];
