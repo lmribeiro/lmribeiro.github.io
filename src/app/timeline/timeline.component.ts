@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { FirebaseService } from '../services/firebase/firebase.service';
 
 @Component({
   selector: 'app-timeline',
@@ -6,11 +7,13 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./timeline.component.sass']
 })
 export class TimelineComponent implements OnInit {
-  @Input() items;
-  @Input() title;
-  constructor() { }
+  @Input() resource;
+  items = [];
+
+  constructor(public firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
+    this.items = this.firebaseService.getData(this.resource);
   }
 
 }

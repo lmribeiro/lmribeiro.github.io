@@ -1,7 +1,7 @@
 <div class="narrow-content">
   <div class="row">
     <div class="col-md-6 col-md-offset-3 col-md-pull-3">
-      <h2 class="heading">{{ title }}</h2>
+      <h2 class="heading">{{ resource }}</h2>
     </div>
   </div>
   <div class="row">
@@ -9,7 +9,7 @@
       <div class="timeline">
         <article class="timeline-entry" *ngFor="let item of items">
 
-          <div *ngIf="title == 'education'" class="timeline-entry-inner">
+          <div *ngIf="resource == 'education'" class="timeline-entry-inner">
             <div class="timeline-icon">
               <a href="{{ item.school_webpage }}" target="_blank" rel="noreferrer">
                 <img src="{{ item.school_image }}" alt="{{ item.school }}"/>
@@ -30,7 +30,7 @@
             </div>
           </div>
 
-          <div *ngIf="title == 'experience'" class="timeline-entry-inner">
+          <div *ngIf="resource == 'experience'" class="timeline-entry-inner">
             <div class="timeline-icon">
               <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer">
                 <img src="{{ item.company_image }}" alt="{{ item.company }}"/>
