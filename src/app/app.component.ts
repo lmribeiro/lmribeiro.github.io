@@ -1,6 +1,4 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +8,6 @@ import 'firebase/firestore';
 export class AppComponent implements OnInit {
   class = 'on';
   tClass = 'nav-toggle';
-  db = null;
-  firebaseConfig = {};
-  educations = [];
-  experiences = [];
-  projects = [];
 
   @HostListener('window:scroll', ['$event'])
   checkScroll(): void {
@@ -44,29 +37,5 @@ export class AppComponent implements OnInit {
     document.getElementsByTagName('body')[0].setAttribute('class', this.class);
   }
 
-  ngOnInit(): void {
-    // Initialize Cloud Firestore through Firebase
-    if (firebase.apps.length === 0) {
-        firebase.initializeApp(this.firebaseConfig);
-    }
-    this.db = firebase.firestore();
-
-    this.db.collection('education').orderBy('position').get().then((data) => {
-      data.forEach((doc) => {
-        this.educations.push(doc.data());
-      });
-    });
-
-    this.db.collection('experience').orderBy('position').get().then((data) => {
-      data.forEach((doc) => {
-        this.experiences.push(doc.data());
-      });
-    });
-
-    this.db.collection('project').orderBy('position').get().then((data) => {
-      data.forEach((doc) => {
-        this.projects.push(doc.data());
-      });
-    });
-  }
+  ngOnInit(): void {}
 }
