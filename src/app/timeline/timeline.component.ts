@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { FirebaseService } from '../services/firebase/firebase.service';
+import { FbService } from '../services/firebase/fb.service';
 
 @Component({
   selector: 'app-timeline',
@@ -10,10 +10,10 @@ export class TimelineComponent implements OnInit {
   @Input() resource;
   items = [];
 
-  constructor(public firebaseService: FirebaseService) { }
+  constructor(public fbService: FbService) { }
 
   ngOnInit(): void {
-    this.items = this.firebaseService.getData(this.resource);
+    this.items = this.fbService.getData(this.resource);
   }
 
 }

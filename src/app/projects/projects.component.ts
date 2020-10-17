@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FirebaseService} from '../services/firebase/firebase.service';
+import {FbService} from '../services/firebase/fb.service';
 
 @Component({
   selector: 'app-projects',
@@ -10,11 +10,11 @@ export class ProjectsComponent implements OnInit {
 
   items = [];
 
-  constructor(public firebaseService: FirebaseService) {
+  constructor(public fbService: FbService) {
   }
 
   ngOnInit(): void {
-    this.items = this.firebaseService.getData('project');
+    this.items = this.fbService.getData('project');
   }
 
 }

@@ -5,7 +5,7 @@ import 'firebase/firestore';
 @Injectable({
   providedIn: 'root'
 })
-export class FirebaseService {
+export class FbService {
 
   db = null;
   firebaseConfig = {};

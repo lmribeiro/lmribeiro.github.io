@@ -8,7 +8,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 // Services
-import { FirebaseService } from './services/firebase/firebase.service';
+import { FbService } from './services/firebase/fb.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { FirebaseService } from './services/firebase/firebase.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [FirebaseService],
+  providers: [FbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
