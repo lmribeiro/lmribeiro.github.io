@@ -63,7 +63,7 @@ $color-light-gray: #f9f9f9;
 *
 * ======================================================= */
 
-// Template Base
+// Base
 body {
   font-family: $font-primary;
   font-weight: 400;
@@ -95,24 +95,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-primary;
   font-weight: 400;
   margin: 0 0 30px 0;
-}
-
-figure {
-  margin-bottom: 2.5em;
-  float: left;
-  width: 100%;
-
-  figcaption {
-    font-size: 16px;
-    width: 80%;
-    margin: 20px auto 0px auto;
-    color: lighten($color-black, 70%);
-    font-style: italic;
-    font-family: $font-primary;
-    @media screen and (max-width: $screen-xs) {
-      width: 100%;
-    }
-  }
 }
 
 ::-webkit-selection {
@@ -162,15 +144,8 @@ figure {
     @include border-radius(50%);
   }
 
-  .position {
-    display: block;
-    margin-bottom: 2em;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-
   #logo {
-    text-align: right;
+    text-align: center;
     font-weight: 700;
     font-size: 22px;
     margin-bottom: .5em;
@@ -352,11 +327,6 @@ body {
   }
 }
 
-.no-gutters {
-  margin: 0;
-  padding: 0;
-}
-
 .section {
   padding-top: 4em;
   padding-bottom: 9em;
@@ -367,36 +337,6 @@ body {
     padding-top: 5em;
     padding-bottom: 8em;
   }
-}
-
-
-//COVER BG
-.heading {
-  font-size: 18px;
-  margin-bottom: 4em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  line-height: 1.8;
-  position: relative;
-
-  span {
-    display: block;
-  }
-
-  @media screen and (max-width: $screen-sm) {
-    margin-bottom: 3em;
-  }
-}
-
-.heading-meta {
-  margin-bottom: 15px;
-  display: block;
-  font-size: 10px;
-  text-transform: uppercase;
-  color: lighten($color-black, 60%);
-  font-weight: 500;
-  letter-spacing: 5px;
 }
 
 //ABOUT

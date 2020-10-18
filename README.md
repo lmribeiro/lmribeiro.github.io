@@ -2,6 +2,9 @@
 
 My personal web page.
 
+<img src="https://firebasestorage.googleapis.com/v0/b/lribeiro-js-org.appspot.com/o/lribeirojsorg.png?alt=media&token=45a81815-3c6c-48cf-9c66-b2bb5d3bf853" alt="lribeiro" />
+
+##
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
