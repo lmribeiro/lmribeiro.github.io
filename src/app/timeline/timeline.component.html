@@ -12,7 +12,7 @@
           <div *ngIf="resource == 'education'" class="timeline-entry-inner">
             <div class="timeline-icon">
               <a href="{{ item.school_webpage }}" target="_blank" rel="noreferrer">
-                <img src="{{ item.school_image }}" alt="{{ item.school }}"/>
+                <img src="{{ item.school_image }}" alt="{{ item.school }}" height="40" width="40"/>
               </a>
             </div>
             <div class="timeline-text">
@@ -32,7 +32,7 @@
 
           <div *ngIf="resource == 'experience'" class="timeline-entry-inner">
             <div class="timeline-icon">
-              <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer">
+              <a href="{{ item.company_webpage ? item.company_webpage : '#' }}" target="_blank" rel="noreferrer">
                 <img src="{{ item.company_image }}" alt="{{ item.company }}"/>
               </a>
             </div>
@@ -40,7 +40,7 @@
 
               <h2>{{ item.job }}</h2>
               <div>
-                <a href="{{ item.company_webpage }}" target="_blank" rel="noreferrer">
+                <a href="{{ item.company_webpage ? item.company_webpage : '#' }}" target="_blank" rel="noreferrer">
                   {{ item.company }}
                 </a> - {{ item.company_location }}
               </div>
