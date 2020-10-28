@@ -1,5 +1,5 @@
 <aside id="aside" role="complementary">
-  <div class="text-center">
+  <div id="me" class="text-center">
     <div>
       <a href="#" (click)="scroll($event, 'page')">
         <img class="avatar-img" src="{{ my.avatar }}" alt="{{ my.name }}" height="150" width="150">
@@ -8,7 +8,7 @@
     <h1 id="logo" class="text-center">
       <a href="#" (click)="scroll($event, 'page')">{{ my.name }}</a>
     </h1>
-    <span class="position">{{ my.position }}<br/><small>{{ my.location }}</small> </span>
+    <span class="position">{{ my.position }}</span>
   </div>
 
   <nav id="main-menu" role="navigation" class="navbar">

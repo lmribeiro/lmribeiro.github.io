@@ -1,4 +1,4 @@
-$font-primary: 'Roboto', Arial, sans-serif;
+$font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $brand-primary: #3fb7eb !default;
 $brand-secondary: #f9bf3f !default;
@@ -93,7 +93,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
   color: $color-black;
   font-family: $font-primary;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0 0 30px 0;
 }
 
@@ -137,6 +137,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 4em;
   }
 
+  #me {
+    margin-bottom: 1.2em;
+  }
+
   .avatar-img {
     width: 150px;
     height: 150px;
@@ -146,9 +150,9 @@ h1, h2, h3, h4, h5, h6 {
 
   #logo {
     text-align: center;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 22px;
-    margin-bottom: .5em;
+    margin-bottom: 0;
     display: block;
     width: 100%;
 
@@ -163,6 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   #main-menu {
     display: block;
     width: 100%;
+    margin-bottom: 5em;
 
     .collapse {
       display: block !important;
@@ -181,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0;
         list-style: none;
         font-size: 12px;
-        font-weight: 500;
+        font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 1px;
 
@@ -246,16 +251,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .footer {
+    position: absolute;
+    bottom: 0;
     font-size: 15px;
     text-align: center;
     font-weight: 400;
     color: rgba(0, 0, 0, .5);
     padding: 0 20px;
     width: 100%;
-    @media screen and (max-width: $screen-sm) {
-      position: relative;
-      bottom: 0;
-    }
 
     span {
       display: block;
@@ -334,15 +337,15 @@ body {
   width: 100%;
   display: block;
   @media screen and(max-width: $screen-sm) {
-    padding-top: 5em;
-    padding-bottom: 8em;
+    padding-top: 1em;
+    padding-bottom: 2em;
   }
 }
 
 .heading {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 4em;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
   line-height: 1.8;
@@ -359,6 +362,7 @@ body {
 
 //ABOUT
 .about-desc {
+
   h3 {
     font-size: 18px;
     text-transform: uppercase;
@@ -370,6 +374,9 @@ body {
 .hire {
   padding: 2em;
   background: $brand-secondary;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+  -moz-box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+  -webkit-box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
 
   h2 {
     line-height: 1.5;
@@ -428,13 +435,19 @@ body {
   position: relative;
   margin-left: -20px;
 }
-
-
+.timeline .timeline-text {
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+  -moz-box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+  -webkit-box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+  @media screen and (max-width: $screen-md) {
+    text-align: left!important;
+  }
+}
 .timeline .timeline-entry .timeline-entry-inner .timeline-icon {
   display: block;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  @include border-radius(50%);
   background: $color-white;
   text-align: center;
   -moz-box-shadow: 0 0 0 5px $color-gray;
@@ -504,7 +517,7 @@ body {
 .timeline .timeline-entry .timeline-entry-inner .timeline-text h2 {
   font-size: 20px;
   font-family: $font-primary;
-  font-weight: 500;
+  font-weight: 400;
   margin: 0.5em 0;
 }
 
@@ -523,88 +536,32 @@ body {
 
 // WORK
 .project {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
   height: auto;
   width: 100%;
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 
   h2 {
     font-size: 20px;
-    font-family: "Roboto", Arial, sans-serif;
-    font-weight: 500;
+    font-family: $font-primary;
+    font-weight: 400;
     margin: 0.5em 0;
   }
 
   img {
     width: 100%;
-  }
-
-  .desc {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: $brand-primary;
-    opacity: 0;
-    @include transition(.3s);
-
-    .con {
-      padding: 20px;
-      display: block;
-      position: relative;
-      height: 300px;
-
-      .icon {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-
-        span {
-          display: inline;
-          padding-right: 5px;
-
-          a {
-            color: lighten($color-black, 20%);
-            padding: 5px;
-            background: rgba(255, 255, 255, .5);
-            @include border-radius(4px);
-          }
-        }
-
-        i {
-          font-size: 16px;
-          color: lighten($color-black, 20%);
-        }
-      }
-    }
-
-    @media screen and(max-width: $screen-sm) {
-      opacity: 1;
-      background: rgba(0, 0, 0, .4);
-      h3 {
-        font-style: 28px;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        color: $color-black;
-      }
-      span {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-      }
-    }
+    border: 2px solid $color-light-gray;
   }
 
   .content {
     position: relative;
+    border-radius: 3px;
     width: 100%;
     margin: auto;
     overflow: hidden;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    -moz-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    -webkit-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
   }
 
   .content .content-overlay {
