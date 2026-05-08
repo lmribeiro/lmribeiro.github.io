@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +21,10 @@ import { FbService } from './services/firebase/fb.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [FbService],
+  providers: [
+    FbService,
+    provideBrowserGlobalErrorListeners()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

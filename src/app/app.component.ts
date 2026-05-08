@@ -3,13 +3,14 @@ import {Component, HostListener, OnInit} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.sass'],
+  standalone: false
 })
 export class AppComponent implements OnInit {
   class = 'on';
   tClass = 'nav-toggle';
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   checkScroll(): void {
     this.class = 'on';
     this.tClass = 'nav-toggle';

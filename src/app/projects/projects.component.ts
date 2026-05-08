@@ -4,7 +4,8 @@ import {FbService} from '../services/firebase/fb.service';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.sass']
+  styleUrls: ['./projects.component.sass'],
+  standalone: false
 })
 export class ProjectsComponent implements OnInit {
 

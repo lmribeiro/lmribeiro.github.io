@@ -3,7 +3,8 @@ import {Component, HostListener, OnInit} from '@angular/core';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.sass']
+  styleUrls: ['./menu.component.sass'],
+  standalone: false
 })
 export class MenuComponent implements OnInit {
   class = 'about';
@@ -38,7 +39,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   checkOffsetTop(): void {
     const aboutOffset = document.getElementById('about').offsetTop;
     const educationOffset = document.getElementById('education').offsetTop;
